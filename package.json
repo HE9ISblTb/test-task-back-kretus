@@ -2,11 +2,16 @@
   "name": "test-task-back",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "maloy",
   "license": "ISC",
-  "description": ""
+  "description": "Тестовое задание, после первого собеседования",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
 }
