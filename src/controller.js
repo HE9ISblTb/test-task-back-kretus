@@ -1,11 +1,11 @@
-import {createAllDataService, createAvgDataOfData} from "./app/services/db-services.js";
+import { createAllDataService, createAvgDataOfData, getAllAvg } from "./app/services/db-services.js";
 import { preparationData } from "./app/services/service.js";
 
-const handleResponse = (res, status, message, data = null) => {
+const handleResponse = (res, status, message, results = null) => {
     res.status(status).json({
         status,
         message,
-        data,
+        results,
     });
 };
 
@@ -26,5 +26,14 @@ export const avgData = async (req, res, next) => {
         handleResponse(res, 200, "Данные добавлены в БД", avgDataOfDate);
     } catch (err) {
         next(err);
+    }
+}
+
+export const avgAllData = async (req, res, next) => {
+    try {
+        const reports = await getAllAvg();
+        handleResponse(res, 200, "Данные добавлены в БД", reports);
+    } catch (err) {
+        next(err)
     }
 }
