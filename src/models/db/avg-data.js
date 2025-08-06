@@ -23,4 +23,6 @@ export const avgData = sequelize.define('avg_data', {
     use_temperature: {
         type: Sequelize.ARRAY(DataTypes.REAL),
     }
-})
+}, {
+    timestamps: false
+});

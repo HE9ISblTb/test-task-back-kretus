@@ -20,4 +20,4 @@ export const allData = sequelize.define('all_data', {
         type: DataTypes.REAL,
         allowNull: false
     }
-})
+});
