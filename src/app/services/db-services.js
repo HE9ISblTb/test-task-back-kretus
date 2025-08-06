@@ -1,4 +1,4 @@
-import {DataTypes, Op, Sequelize} from 'sequelize';
+import { Op, Sequelize } from 'sequelize';
 
 import { allData } from "../../models/db/all-data.js";
 import { avgData } from "../../models/db/avg-data.js";
