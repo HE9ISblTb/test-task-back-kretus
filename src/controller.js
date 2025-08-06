@@ -1,4 +1,5 @@
 import { createAllDataService } from "./app/services/db-services.js";
+import { preparationData } from "./app/services/service.js";
 
 const handleResponse = (res, status, message, data = null) => {
     res.status(status).json({
@@ -9,10 +10,9 @@ const handleResponse = (res, status, message, data = null) => {
 };
 
 export const createAllData = async (req, res, next) => {
-    const { date, temperature, building } = req.body;
-    //Добавить обработку массива.
+    const arrayData = await preparationData(req.body);
     try {
-        const newData = await createAllDataService(date, temperature, building);
+        const newData = await createAllDataService(arrayData);
         handleResponse(res, 200, "Данные добавлены в БД", newData);
     } catch (err) {
         next(err);

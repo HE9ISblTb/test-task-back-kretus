@@ -7,14 +7,12 @@ import errorHandler from "./src/middleware/errorHandler.js";
 
 export const app = express();
 
+app.use(express.json());
 app.use(cors());
-app.use(express.json())
-let jsonParser = express.json();
+
+let bodyParser = express.json();
+app.use(bodyParser)
 
 app.use("/api", routes);
 
-app.use(errorHandler)
-
-app.get("/", jsonParser, function (req, res, next) {
-    res.status(200).send('hello world');
-});
+app.use(errorHandler);
