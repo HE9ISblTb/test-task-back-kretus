@@ -35,9 +35,10 @@ export const createAvgDataOfData = async (date) => {
                 use_temperature: arrayTemperature,
             });
             return {
-                date: avgValue.date_avg,
-                avg_temp: avgValue.temperature_avg,
-                used_temp: avgValue.use_temperature
+                date_settlement: avgValue.date_settlement,
+                date_avg: avgValue.date_avg,
+                temperature_avg: avgValue.temperature_avg,
+                use_temperature: avgValue.use_temperature,
             }
         }
     } catch (err) {
